@@ -15,7 +15,16 @@ opts=$(getopt --name "${0##*/}" --shell sh \
 
 set this [file tail $argv0]	; # This script's name for error messages
 
-set action bell
+set num_beeps 0
+proc beep {} {
+    global num_beeps
+    incr num_beeps
+    if {$num_beeps <= 10 || $num_beeps % 30 == 0} {
+        bell
+    }
+}
+
+set action beep
 
 while {[llength $argv] > 0} {
     set arg [lindex $argv 0]
