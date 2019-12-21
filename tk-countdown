@@ -5,6 +5,8 @@
 # Display a continually-updating countdown to a specified time.
 #
 
+# Copyright (c) 2013, Michael Cook <michael@waxrat.com>. All rights reserved.
+
 # These lines end in a backslash so that wish ignores them (thinking they
 # are part of this comment).  But /bin/sh executes them. \
 opts=$(getopt --name "${0##*/}" --shell sh \
